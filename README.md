@@ -9,7 +9,7 @@ This project provides a real-time traffic monitoring pipeline using Azure servic
 📌 Project Architecture
 Traffic Data Source → Azure Stream Analytics → Azure SQL Database → Power BI Dashboard
 
-✨ Features
+#✨ Features
 
 ✔ Real-time traffic ingestion
 
@@ -27,7 +27,7 @@ Traffic Data Source → Azure Stream Analytics → Azure SQL Database → Power 
 
 ✔ Supports testing & production modes
 
-🧩 Technologies Used
+#🧩 Technologies Used
 Component	Technology
 Data Source	Simulated traffic events
 Stream Processing	Azure Stream Analytics
@@ -54,7 +54,7 @@ CREATE TABLE [LiveTrafficData] (
     [road_closed] nvarchar(4000)
 );
 
-⚙️ Stream Analytics Query
+#⚙️ Stream Analytics Query
 SELECT 
     region,
     lat AS latitude,
@@ -76,43 +76,13 @@ INTO
 FROM
     traffictestt;
 
-📊 Power BI Dashboard
+#📊 Power BI Dashboard
 
 Your dashboard includes:
 
 📍 Real-time map view (if enabled by admin)
 
-📊 KPI cards:
-
-Avg speed
-
-Number of incidents
-
-Congestion level
-
-🕒 Time-series charts for speed & travel time
-
-🧭 Region slicer
-
-📜 Landing page with project summary
-
-🔔 Alerts
-
-You can configure alerts using:
-
-✔ Azure Monitor (Recommended)
-
-Alerts when traffic speed < threshold
-
-Alerts when incidents > threshold
-
-Send email/SMS/Teams using Action Groups
-
-Optional: Power BI Alerts
-
-(Only works on Power BI Service, not Desktop)
-
-▶️ How to Run the Project
+#▶️ How to Run the Project
 1. Start Data Simulation
 
 Send traffic events to your input source (IoT Hub/Event Hub).
@@ -132,29 +102,8 @@ Power BI Service → Get Data → Azure SQL DB → Enter credentials
 Scheduled refresh every 15 min
 (Real-time tiles work instantly for DirectQuery)
 
-📦 Repository Structure
-/Traffic-Monitoring
-│── README.md
-│── stream-analytics-query.sql
-│── sql-schema.sql
-│── dashboard/
-│      ├── screenshots
-│      └── pbix (optional, do not upload if sensitive)
-│── alerts/
-│      ├── monitor-rules
-│      └── logic-app-example.json
 
-📸 Dashboard Screenshots
 
-(Add your own screenshots here to make the repo look professional)
-
-/dashboard/screenshots/map.png
-/dashboard/screenshots/kpis.png
-/dashboard/screenshots/landing-page.png
-
-📌 Future Improvements
-
-Add ML anomaly detection for congestion
 
 Add road-closure prediction model
 
